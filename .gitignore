@@ -40,4 +40,9 @@ gurobi.lic
 *.env
 *.pdf
 
+# macOS folder metadata
+.DS_Store
 
+# TD-TSP raw datasets (large binaries; fetch with Benchmarking_data/YangFan/fetch_data.sh)
+Benchmarking_data/YangFan/data/tdtsp/*.npy
+Benchmarking_data/YangFan/testcases/*.pt

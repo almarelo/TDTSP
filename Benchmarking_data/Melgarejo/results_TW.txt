@@ -1,0 +1,338 @@
+Optimal solutions are suffixed by *. 
+If no solutions were found the objective value given is -1.
+
+____________________________ SIZE 10 ________________________________________
+
+inst_10_1_TW.txt matrix00.txt 7795*
+inst_10_2_TW.txt matrix00.txt 6854*
+inst_10_3_TW.txt matrix00.txt 9601*
+inst_10_4_TW.txt matrix00.txt 7327*
+inst_10_5_TW.txt matrix00.txt 9968*
+inst_10_6_TW.txt matrix00.txt 9408*
+inst_10_7_TW.txt matrix00.txt 7571*
+inst_10_8_TW.txt matrix00.txt 7571*
+inst_10_9_TW.txt matrix00.txt 7890*
+inst_10_10_TW.txt matrix00.txt 9002*
+inst_10_11_TW.txt matrix00.txt 10591*
+inst_10_12_TW.txt matrix00.txt 8914*
+inst_10_13_TW.txt matrix00.txt 7910*
+inst_10_14_TW.txt matrix00.txt 10131*
+inst_10_15_TW.txt matrix00.txt 7803*
+inst_10_16_TW.txt matrix00.txt 8444*
+inst_10_17_TW.txt matrix00.txt 9262*
+inst_10_18_TW.txt matrix00.txt 9747*
+inst_10_19_TW.txt matrix00.txt 6335*
+inst_10_20_TW.txt matrix00.txt 8488*
+
+
+inst_10_1_TW.txt matrix10.txt 7860*
+inst_10_2_TW.txt matrix10.txt 6683*
+inst_10_3_TW.txt matrix10.txt 9810*
+inst_10_4_TW.txt matrix10.txt 7349*
+inst_10_5_TW.txt matrix10.txt 10372*
+inst_10_6_TW.txt matrix10.txt 9737*
+inst_10_7_TW.txt matrix10.txt 7769*
+inst_10_8_TW.txt matrix10.txt 7538*
+inst_10_9_TW.txt matrix10.txt 8135*
+inst_10_10_TW.txt matrix10.txt 9159*
+inst_10_11_TW.txt matrix10.txt 10906*
+inst_10_12_TW.txt matrix10.txt 9304*
+inst_10_13_TW.txt matrix10.txt 7322*
+inst_10_14_TW.txt matrix10.txt 10352*
+inst_10_15_TW.txt matrix10.txt 7986*
+inst_10_16_TW.txt matrix10.txt 8591*
+inst_10_17_TW.txt matrix10.txt 9501*
+inst_10_18_TW.txt matrix10.txt 10002*
+inst_10_19_TW.txt matrix10.txt 6206*
+inst_10_20_TW.txt matrix10.txt 8800*
+
+
+inst_10_1_TW.txt matrix20.txt 7846*
+inst_10_2_TW.txt matrix20.txt 6759*
+inst_10_3_TW.txt matrix20.txt 10116*
+inst_10_4_TW.txt matrix20.txt 7593*
+inst_10_5_TW.txt matrix20.txt 10660*
+inst_10_6_TW.txt matrix20.txt 10075*
+inst_10_7_TW.txt matrix20.txt 7778*
+inst_10_8_TW.txt matrix20.txt 7492*
+inst_10_9_TW.txt matrix20.txt 7729*
+inst_10_10_TW.txt matrix20.txt 9369*
+inst_10_11_TW.txt matrix20.txt 11098*
+inst_10_12_TW.txt matrix20.txt 9511*
+inst_10_13_TW.txt matrix20.txt 7386*
+inst_10_14_TW.txt matrix20.txt 10573*
+inst_10_15_TW.txt matrix20.txt 8292*
+inst_10_16_TW.txt matrix20.txt 8625*
+inst_10_17_TW.txt matrix20.txt 9886*
+inst_10_18_TW.txt matrix20.txt 10200*
+inst_10_19_TW.txt matrix20.txt 6199*
+inst_10_20_TW.txt matrix20.txt 9121*
+
+____________________________ SIZE 20 ________________________________________
+
+inst_20_1_TW.txt matrix00.txt 13931*
+inst_20_2_TW.txt matrix00.txt 14166*
+inst_20_3_TW.txt matrix00.txt 13984*
+inst_20_4_TW.txt matrix00.txt 14706*
+inst_20_5_TW.txt matrix00.txt 13794*
+inst_20_6_TW.txt matrix00.txt 13006*
+inst_20_7_TW.txt matrix00.txt 13799*
+inst_20_8_TW.txt matrix00.txt 13390*
+inst_20_9_TW.txt matrix00.txt 14338*
+inst_20_10_TW.txt matrix00.txt 15693*
+inst_20_11_TW.txt matrix00.txt 14831*
+inst_20_12_TW.txt matrix00.txt 14157*
+inst_20_13_TW.txt matrix00.txt 12506*
+inst_20_14_TW.txt matrix00.txt 12253*
+inst_20_15_TW.txt matrix00.txt 14962*
+inst_20_16_TW.txt matrix00.txt 12622*
+inst_20_17_TW.txt matrix00.txt 13803*
+inst_20_18_TW.txt matrix00.txt 15230*
+inst_20_19_TW.txt matrix00.txt 12932*
+inst_20_20_TW.txt matrix00.txt 14227*
+
+
+inst_20_1_TW.txt matrix10.txt 14024*
+inst_20_2_TW.txt matrix10.txt 13913*
+inst_20_3_TW.txt matrix10.txt 14217*
+inst_20_4_TW.txt matrix10.txt 14596*
+inst_20_5_TW.txt matrix10.txt 13504*
+inst_20_6_TW.txt matrix10.txt 13226*
+inst_20_7_TW.txt matrix10.txt 13942*
+inst_20_8_TW.txt matrix10.txt 13553*
+inst_20_9_TW.txt matrix10.txt 14337*
+inst_20_10_TW.txt matrix10.txt 15325*
+inst_20_11_TW.txt matrix10.txt 14659*
+inst_20_12_TW.txt matrix10.txt 14103*
+inst_20_13_TW.txt matrix10.txt 12874*
+inst_20_14_TW.txt matrix10.txt 12519*
+inst_20_15_TW.txt matrix10.txt 14859*
+inst_20_16_TW.txt matrix10.txt 12943*
+inst_20_17_TW.txt matrix10.txt 13801*
+inst_20_18_TW.txt matrix10.txt 15208*
+inst_20_19_TW.txt matrix10.txt 13273*
+inst_20_20_TW.txt matrix10.txt 14226*
+
+
+inst_20_1_TW.txt matrix20.txt 13881*
+inst_20_2_TW.txt matrix20.txt 13543*
+inst_20_3_TW.txt matrix20.txt 14086*
+inst_20_4_TW.txt matrix20.txt 14496*
+inst_20_5_TW.txt matrix20.txt 13511*
+inst_20_6_TW.txt matrix20.txt 13777*
+inst_20_7_TW.txt matrix20.txt 13983*
+inst_20_8_TW.txt matrix20.txt 13522*
+inst_20_9_TW.txt matrix20.txt 14229*
+inst_20_10_TW.txt matrix20.txt 15119*
+inst_20_11_TW.txt matrix20.txt 14621*
+inst_20_12_TW.txt matrix20.txt 14003*
+inst_20_13_TW.txt matrix20.txt 13149*
+inst_20_14_TW.txt matrix20.txt 12503*
+inst_20_15_TW.txt matrix20.txt 14756*
+inst_20_16_TW.txt matrix20.txt 13229*
+inst_20_17_TW.txt matrix20.txt 13679*
+inst_20_18_TW.txt matrix20.txt 15099*
+inst_20_19_TW.txt matrix20.txt 13329*
+inst_20_20_TW.txt matrix20.txt 14277*
+
+____________________________ SIZE 30 ________________________________________
+
+
+inst_30_1_TW.txt matrix00.txt 18493
+inst_30_2_TW.txt matrix00.txt 17111*
+inst_30_3_TW.txt matrix00.txt 18148*
+inst_30_4_TW.txt matrix00.txt 20335*
+inst_30_5_TW.txt matrix00.txt 15482
+inst_30_6_TW.txt matrix00.txt 18635*
+inst_30_7_TW.txt matrix00.txt 17252*
+inst_30_8_TW.txt matrix00.txt 20342*
+inst_30_9_TW.txt matrix00.txt 16305*
+inst_30_10_TW.txt matrix00.txt 17367*
+inst_30_11_TW.txt matrix00.txt 17575*
+inst_30_12_TW.txt matrix00.txt 17909*
+inst_30_13_TW.txt matrix00.txt 20522*
+inst_30_14_TW.txt matrix00.txt 18982*
+inst_30_15_TW.txt matrix00.txt 18573
+inst_30_16_TW.txt matrix00.txt 15570*
+inst_30_17_TW.txt matrix00.txt 18506
+inst_30_18_TW.txt matrix00.txt 22418*
+inst_30_19_TW.txt matrix00.txt 25157*
+inst_30_20_TW.txt matrix00.txt 22132*
+
+
+inst_30_1_TW.txt matrix10.txt 18157*
+inst_30_2_TW.txt matrix10.txt 16933
+inst_30_3_TW.txt matrix10.txt 17770*
+inst_30_4_TW.txt matrix10.txt 20147*
+inst_30_5_TW.txt matrix10.txt 15597
+inst_30_6_TW.txt matrix10.txt 18203*
+inst_30_7_TW.txt matrix10.txt 17175*
+inst_30_8_TW.txt matrix10.txt 20120*
+inst_30_9_TW.txt matrix10.txt 16236*
+inst_30_10_TW.txt matrix10.txt 17302*
+inst_30_11_TW.txt matrix10.txt 17609*
+inst_30_12_TW.txt matrix10.txt 17722*
+inst_30_13_TW.txt matrix10.txt 19862*
+inst_30_14_TW.txt matrix10.txt 18664*
+inst_30_15_TW.txt matrix10.txt 18394
+inst_30_16_TW.txt matrix10.txt 15590*
+inst_30_17_TW.txt matrix10.txt 18264
+inst_30_18_TW.txt matrix10.txt 21561*
+inst_30_19_TW.txt matrix10.txt 24895*
+inst_30_20_TW.txt matrix10.txt 21996*
+
+
+inst_30_1_TW.txt matrix20.txt 18109
+inst_30_2_TW.txt matrix20.txt 16634*
+inst_30_3_TW.txt matrix20.txt 17349*
+inst_30_4_TW.txt matrix20.txt 20024*
+inst_30_5_TW.txt matrix20.txt 15271
+inst_30_6_TW.txt matrix20.txt 17776*
+inst_30_7_TW.txt matrix20.txt 16971*
+inst_30_8_TW.txt matrix20.txt 19975*
+inst_30_9_TW.txt matrix20.txt 16046*
+inst_30_10_TW.txt matrix20.txt 16957*
+inst_30_11_TW.txt matrix20.txt 17516*
+inst_30_12_TW.txt matrix20.txt 17624*
+inst_30_13_TW.txt matrix20.txt 19572*
+inst_30_14_TW.txt matrix20.txt 18062*
+inst_30_15_TW.txt matrix20.txt 17845
+inst_30_16_TW.txt matrix20.txt 15612*
+inst_30_17_TW.txt matrix20.txt 18055
+inst_30_18_TW.txt matrix20.txt 21222*
+inst_30_19_TW.txt matrix20.txt 24814*
+inst_30_20_TW.txt matrix20.txt 21861*
+
+____________________________ SIZE 50 ________________________________________
+
+inst_50_1_TW.txt matrix00.txt 23493
+inst_50_2_TW.txt matrix00.txt 24824
+inst_50_3_TW.txt matrix00.txt 24379
+inst_50_4_TW.txt matrix00.txt 26687
+inst_50_5_TW.txt matrix00.txt 21911
+inst_50_6_TW.txt matrix00.txt 23056
+inst_50_7_TW.txt matrix00.txt 23882
+inst_50_8_TW.txt matrix00.txt 23945
+inst_50_9_TW.txt matrix00.txt 23171
+inst_50_10_TW.txt matrix00.txt 24136
+inst_50_11_TW.txt matrix00.txt 25034
+inst_50_12_TW.txt matrix00.txt 25541
+inst_50_13_TW.txt matrix00.txt 24885
+inst_50_14_TW.txt matrix00.txt 27658
+inst_50_15_TW.txt matrix00.txt 23394
+inst_50_16_TW.txt matrix00.txt 25122
+inst_50_17_TW.txt matrix00.txt 25327
+inst_50_18_TW.txt matrix00.txt 22725
+inst_50_19_TW.txt matrix00.txt 26810
+inst_50_20_TW.txt matrix00.txt 24501
+
+
+inst_50_1_TW.txt matrix10.txt 22795
+inst_50_2_TW.txt matrix10.txt 23858
+inst_50_3_TW.txt matrix10.txt 22192
+inst_50_4_TW.txt matrix10.txt 25709
+inst_50_5_TW.txt matrix10.txt 22959
+inst_50_6_TW.txt matrix10.txt 22470
+inst_50_7_TW.txt matrix10.txt 23358
+inst_50_8_TW.txt matrix10.txt 23244
+inst_50_9_TW.txt matrix10.txt 22539
+inst_50_10_TW.txt matrix10.txt 23158
+inst_50_11_TW.txt matrix10.txt 24308
+inst_50_12_TW.txt matrix10.txt 24714
+inst_50_13_TW.txt matrix10.txt 23861
+inst_50_14_TW.txt matrix10.txt 27158
+inst_50_15_TW.txt matrix10.txt 22987
+inst_50_16_TW.txt matrix10.txt 24111
+inst_50_17_TW.txt matrix10.txt 24243
+inst_50_18_TW.txt matrix10.txt 22273
+inst_50_19_TW.txt matrix10.txt 25829
+inst_50_20_TW.txt matrix10.txt 23417
+
+
+inst_50_1_TW.txt matrix20.txt 22832
+inst_50_2_TW.txt matrix20.txt 23314
+inst_50_3_TW.txt matrix20.txt 21730
+inst_50_4_TW.txt matrix20.txt 25284
+inst_50_5_TW.txt matrix20.txt 23275
+inst_50_6_TW.txt matrix20.txt 22123
+inst_50_7_TW.txt matrix20.txt 22890
+inst_50_8_TW.txt matrix20.txt 22608
+inst_50_9_TW.txt matrix20.txt 22301
+inst_50_10_TW.txt matrix20.txt 22670
+inst_50_11_TW.txt matrix20.txt 23778
+inst_50_12_TW.txt matrix20.txt 24162
+inst_50_13_TW.txt matrix20.txt 23256
+inst_50_14_TW.txt matrix20.txt 26306
+inst_50_15_TW.txt matrix20.txt 22575
+inst_50_16_TW.txt matrix20.txt 23679
+inst_50_17_TW.txt matrix20.txt 23495
+inst_50_18_TW.txt matrix20.txt 22000
+inst_50_19_TW.txt matrix20.txt 25289
+inst_50_20_TW.txt matrix20.txt 23032
+
+____________________________ SIZE 100 ________________________________________
+
+inst_100_1_TW.txt matrix00.txt 44741
+inst_100_2_TW.txt matrix00.txt -1
+inst_100_3_TW.txt matrix00.txt 45308
+inst_100_4_TW.txt matrix00.txt 50124
+inst_100_5_TW.txt matrix00.txt 41815
+inst_100_6_TW.txt matrix00.txt 40051
+inst_100_7_TW.txt matrix00.txt 47074
+inst_100_8_TW.txt matrix00.txt -1
+inst_100_9_TW.txt matrix00.txt -1
+inst_100_10_TW.txt matrix00.txt 45161
+inst_100_11_TW.txt matrix00.txt 45656
+inst_100_12_TW.txt matrix00.txt 45499
+inst_100_13_TW.txt matrix00.txt 43734
+inst_100_14_TW.txt matrix00.txt 40888
+inst_100_15_TW.txt matrix00.txt 45146
+inst_100_16_TW.txt matrix00.txt 49901
+inst_100_17_TW.txt matrix00.txt 45122
+inst_100_18_TW.txt matrix00.txt 44802
+inst_100_19_TW.txt matrix00.txt 44638
+inst_100_20_TW.txt matrix00.txt -1
+
+
+inst_100_1_TW.txt matrix10.txt 43005
+inst_100_2_TW.txt matrix10.txt 38464
+inst_100_3_TW.txt matrix10.txt 46961
+inst_100_4_TW.txt matrix10.txt 50691
+inst_100_5_TW.txt matrix10.txt 41662
+inst_100_6_TW.txt matrix10.txt 39133
+inst_100_7_TW.txt matrix10.txt 40493
+inst_100_8_TW.txt matrix10.txt 47085
+inst_100_9_TW.txt matrix10.txt -1
+inst_100_10_TW.txt matrix10.txt 42963
+inst_100_11_TW.txt matrix10.txt 44187
+inst_100_12_TW.txt matrix10.txt 44249
+inst_100_13_TW.txt matrix10.txt 41741
+inst_100_14_TW.txt matrix10.txt 39623
+inst_100_15_TW.txt matrix10.txt 43086
+inst_100_16_TW.txt matrix10.txt 41802
+inst_100_17_TW.txt matrix10.txt 45037
+inst_100_18_TW.txt matrix10.txt 44499
+inst_100_19_TW.txt matrix10.txt 44603
+inst_100_20_TW.txt matrix10.txt 41699
+
+
+inst_100_1_TW.txt matrix20.txt 40905
+inst_100_2_TW.txt matrix20.txt 36200
+inst_100_3_TW.txt matrix20.txt 46286
+inst_100_4_TW.txt matrix20.txt 48187
+inst_100_5_TW.txt matrix20.txt 40333
+inst_100_6_TW.txt matrix20.txt 38950
+inst_100_7_TW.txt matrix20.txt 43886
+inst_100_8_TW.txt matrix20.txt 45176
+inst_100_9_TW.txt matrix20.txt 38530
+inst_100_10_TW.txt matrix20.txt 44197
+inst_100_11_TW.txt matrix20.txt 42466
+inst_100_12_TW.txt matrix20.txt 42414
+inst_100_13_TW.txt matrix20.txt 39955
+inst_100_14_TW.txt matrix20.txt 39198
+inst_100_15_TW.txt matrix20.txt 40351
+inst_100_16_TW.txt matrix20.txt 40780
+inst_100_17_TW.txt matrix20.txt 45107
+inst_100_18_TW.txt matrix20.txt 43910
+inst_100_19_TW.txt matrix20.txt 47371
+inst_100_20_TW.txt matrix20.txt -1
