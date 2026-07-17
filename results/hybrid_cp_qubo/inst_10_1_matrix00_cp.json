@@ -1,0 +1,100 @@
+{
+  "approach": "hybrid_cp_qubo",
+  "instance": "inst_10_1.txt",
+  "matrix": "matrix00",
+  "n": 10,
+  "vertices": [
+    222,
+    190,
+    81,
+    32,
+    9,
+    132,
+    240,
+    74,
+    127,
+    150
+  ],
+  "start_time": 279.0,
+  "max_cluster_size": 10,
+  "n_clusters": 1,
+  "cluster_sizes": [
+    10
+  ],
+  "clusters": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  ],
+  "use_qubo": false,
+  "qubo_backend": "sa",
+  "objective": "return_time",
+  "wall_clock_start_iso": "2026-07-17T16:38:30.604228+00:00",
+  "path": "cp_only",
+  "status": "FEASIBLE",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    5,
+    8,
+    9,
+    1,
+    3,
+    7,
+    2,
+    6
+  ],
+  "return_time": 7605,
+  "return_time_oracle": 7605.0,
+  "objective_bound": 1861.0,
+  "solve_time_seconds": 60.025949000000004,
+  "cp_time_limit_seconds": 60.0,
+  "arrivals": [
+    0.0,
+    870.0,
+    1648.0,
+    2656.0,
+    3399.0,
+    4491.0,
+    5467.0,
+    6188.0,
+    6405.0,
+    7168.0,
+    7605.0
+  ],
+  "departures": [
+    279.0,
+    1122.0,
+    1885.0,
+    2941.0,
+    3601.0,
+    4597.0,
+    5711.0,
+    6335.0,
+    6551.0,
+    7373.0
+  ],
+  "edge_travel_times": [
+    591.0,
+    526.0,
+    771.0,
+    458.0,
+    890.0,
+    870.0,
+    477.0,
+    70.0,
+    617.0,
+    232.0
+  ],
+  "wall_clock_end_iso": "2026-07-17T16:39:31.163636+00:00"
+}
