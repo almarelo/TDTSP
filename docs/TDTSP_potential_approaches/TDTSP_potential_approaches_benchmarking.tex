@@ -1,0 +1,240 @@
+\documentclass[
+11pt,notheorems,hyperref={pdfauthor=Alma Arevalo Loyola}
+]{beamer}
+
+\input{loadslides.tex}
+\addbibresource{tdtsp_references.bib}
+\addbibresource{tdtsp_benchmarking_references.bib}
+
+\graphicspath{{figs/}}
+
+% Theme-harmonious fuchsia accent for the presenter
+\definecolor{presenterhighlight}{HTML}{C0398C}
+
+% Consistent figure caption style matching the theme
+\newcommand{\figcap}[1]{{\sffamily\itshape\color{gray}\scriptsize #1}}
+\newcommand{\figcaps}[1]{{\sffamily\itshape\color{gray}\fontsize{6}{6.6}\selectfont #1}}
+
+% Emphasized terms in a guinda-fuchsia (deep cherry magenta)
+\definecolor{emphasisblue}{HTML}{9B2D63}
+\renewcommand{\emphasize}[1]{\textcolor{emphasisblue}{\textit{#1}}}
+
+% Secondary emphasis in muted teal-blue
+\definecolor{emphasisteal}{HTML}{2C7E8C}
+\newcommand{\emphteal}[1]{\textcolor{emphasisteal}{\textit{#1}}}
+
+\title[TD-TSP: Potential Approaches]{Time-Dependent TSP: Potential Approaches}
+\subtitle{State of the art, hybrid directions, and a better benchmark}
+
+\author{Alma Arevalo Loyola}
+\institute{Quantum Optimization Lab, SuperQ Quantum Computing Inc.}
+\date{\today}
+
+\begin{document}
+
+% --- Title slide ---
+{
+\setbeamertemplate{footline}{}
+\begin{frame}
+  \vspace*{-1.4cm}
+  {\raggedleft\usebeamercolor[fg]{date}\usebeamerfont{date}\normalsize\insertdate\par}
+  \vspace{1.6cm}
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+  \vspace{0.35cm}
+  {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+  \vspace{0.9cm}
+  {\footnotesize
+    \textcolor{presenterhighlight}{\small\textbf{Alma Arevalo Loyola}}\\[0.3em]
+    Optimization Team, SuperQ
+  \par}
+  \vfill
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+% --- Outline ---
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{The TD-TSP problem}
+
+\begin{frame}{The Time-Dependent TSP}
+  \begin{itemize}
+    \item \emphasize{TSP:} find a minimum-cost tour visiting every city once.
+    \item \emphasize{TD-TSP:} edge costs depend on \emphteal{when} you travel,
+    \[
+      D_{ij}(t) = \text{travel time from } i \text{ to } j \text{ departing at } t,
+    \]
+    capturing traffic (slow at rush hour, fast at night).
+    \item Realistic for \emphteal{logistics} and \emphteal{traffic-aware routing}.
+    \item \emphasize{NP-hard:} no known efficient algorithm finds the optimal tour.
+  \end{itemize}
+\end{frame}
+
+\section{State of the art}
+
+\begin{frame}{State of the art: three families of methods}
+  \small
+  \begin{block}{1. Classical exact methods}
+    Currently the \emphasize{strongest} methods for obtaining \emphasize{optimal} solutions.
+  \end{block}
+  \begin{block}{2. Constraint programming and heuristics}
+    Strong for \emphteal{scheduling-rich} variants (time windows, no-overlap, side constraints).
+  \end{block}
+  \begin{block}{3. Quantum-based approaches}
+    An important \emphteal{research direction}, but \alert{not yet competitive} with classical exact methods on realistic TD-TSP instances.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Classical exact methods}
+  The strongest tools for provably optimal TD-TSP solutions:
+  \begin{itemize}
+    \item \emphasize{Branch-and-cut} for the TD-TSP \cite{cordeau2014analysis}.
+    \item \emphasize{Dynamic discretization discovery} for TD-TSP with time windows \cite{vu2020dynamic}.
+    \item \emphasize{Dynamic programming} for TD-TSP with time windows \cite{lera2022dynamic}.
+    \item Broad overview of time-dependent routing \cite{gendreau2015time}.
+  \end{itemize}
+  \vspace{0.4em}
+  \textcolor{gray}{These scale to realistic instances and remain the benchmark to beat.}
+\end{frame}
+
+\begin{frame}{Constraint programming and heuristics}
+  \begin{itemize}
+    \item CP models handle \emphteal{rich scheduling constraints} naturally: time windows, precedence, no-overlap, service times.
+    \item Especially strong when the routing is entangled with \emphteal{scheduling} decisions.
+    \item A key building block: a \emphasize{time-dependent no-overlap constraint} for urban delivery \cite{aguiar2015time}, which reasons about travel times that depend on the time of day.
+  \end{itemize}
+  \vspace{0.4em}
+  \textcolor{gray}{CP complements exact MILP and provides a flexible master for hybrid pipelines.}
+\end{frame}
+
+\section{Quantum approaches}
+
+\begin{frame}{Quantum-based approaches}
+  \begin{itemize}
+    \item TD-TSP can be encoded as a \emphasize{QUBO} / Ising model and solved on annealers or gate-based devices (QAOA).
+    \item Progress is mostly in \emphteal{encoding efficiency} and \emphteal{proof-of-concept} runs, still limited to small instances.
+    \item On realistic TD-TSP instances, quantum solvers are \alert{not yet dominant}: classical exact methods remain faster and at least as accurate.
+  \end{itemize}
+  \vspace{0.5em}
+  \begin{block}{Where quantum helps most: hybrid pipelines}
+    The quantum device solves only a \emphasize{subproblem}; classical methods handle decomposition and refinement. This is currently the \emphasize{most practical} quantum approach.
+  \end{block}
+\end{frame}
+
+\section{Paper analysis}
+
+\begin{frame}{Paper analysis}
+  The study \emph{``Benchmarking Quantum vs Classical Approaches for Time-Dependent TSP''}, a recent quantum-vs-classical benchmark for the TD-TSP.
+  \begin{itemize}
+    \item Solves TD-TSP with \emphteal{Gurobi MILP}, \emphteal{D-Wave} annealing, \emphteal{QAOA} on Rigetti, and a \emphteal{Quanfluence} Ising machine.
+    \item Instances built from \emphasize{Google Maps} traffic data for New York City ($n = 5$ to $100$).
+    \item Reports tour quality, solve times, and communication overhead.
+  \end{itemize}
+  \vspace{0.3em}
+  \textcolor{gray}{Finding: Gurobi stays fastest; quantum + classical 2-opt matches it in quality on medium--large instances.}
+\end{frame}
+
+\begin{frame}{What is good}
+  \begin{itemize}
+    \item[\textcolor{emphasisteal}{\checkmark}] Uses \emphasize{realistic traffic data} (Google Maps, NYC).
+    \item[\textcolor{emphasisteal}{\checkmark}] Tests \emphasize{real quantum hardware}, not only simulation.
+    \item[\textcolor{emphasisteal}{\checkmark}] Compares \emphasize{multiple quantum paradigms} (annealing, QAOA, Ising).
+    \item[\textcolor{emphasisteal}{\checkmark}] Includes \emphasize{runtime and solution quality}, not just objective values.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What can be improved}
+  \small
+  The paper does \alert{not} use time dependency \emphteal{while building} the route: it solves a \emphteal{static TSP}, then evaluates the tour under traffic.
+  \vspace{0.4em}
+
+  Ideally, each edge cost should use the \emphasize{actual arrival time} at the node, $D_{ij}(t_{\text{arrival}})$. Instead, the paper just multiplies all edges by one \emphasize{traffic factor} per time window,
+  \[
+    D_{ij}(t) = m_t \, D_{ij}.
+  \]
+  \vspace{0.3em}
+
+  \textcolor{gray}{So time only rescales the whole map uniformly --- it does not change which route is best at different departure times.}
+\end{frame}
+
+\section{Improving the benchmark}
+
+\begin{frame}{The benchmark itself can be improved}
+  \small
+  Beyond the time-dependency modelling, the \emphteal{evaluation methodology} has four weaknesses:
+  \begin{enumerate}\setlength{\itemsep}{4pt}
+    \item Comparison is \emphasize{per solver}, but quantum's value lies in \emphasize{hybrid} pipelines.
+    \item Experiments use a \emphasize{single, newly created} dataset --- no comparison with the state of the art.
+    \item No analysis of \emphasize{what makes an instance time-dependent} (vs.\ effectively static).
+    \item \emphasize{Models} and \emphasize{solvers} are conflated --- four solvers, but which model does each solve?
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{1 \& 4: Compare hybrids, and separate models from solvers}
+  \small
+  \begin{block}{Don't benchmark solvers in isolation}
+    Quantum hardware is \alert{not} expected to beat a mature classical solver alone; its value comes from \emphasize{hybrid} pipelines. The fair unit of comparison is the \emphteal{pipeline}, not the bare device.
+  \end{block}
+  \begin{block}{Model $\neq$ solver}
+    The four solvers do not solve the same problem: \emphteal{Gurobi} solves a \emphasize{MILP}; \emphteal{D-Wave, QAOA, Quanfluence} solve a \emphasize{QUBO/Ising}. Differences may reflect the \emphasize{formulation}, not the hardware --- so report each solver's model and compare like-for-like.
+  \end{block}
+\end{frame}
+
+\begin{frame}{2: Use the established TD-TSP benchmark datasets}
+  \small
+  A single home-grown NYC dataset cannot be compared against the literature. The community already has \emphasize{standard benchmarks}:
+  \begin{itemize}
+    \item \emphteal{Cordeau et al.\ (2014)} instances, extended with time windows by \emphteal{Arigliano et al.\ (2019)} \cite{cordeau2014analysis,arigliano2019time}.
+    \item \emphteal{Lyon} real-traffic benchmark from sensor data \cite{aguiar2015time}.
+    \item \emphteal{Realistic Rome/Paris/London} datasets \cite{tdrouting}.
+    \item \emphteal{10-city} time-dependent benchmark \cite{blauth2024vehicle}; \emphteal{Beijing} dynamic-TSP data \cite{zhang2023solving}.
+  \end{itemize}
+  \vspace{0.3em}
+  \textcolor{gray}{Experimenting on these enables direct comparison with state-of-the-art exact, heuristic, and learning-based methods.}
+\end{frame}
+
+\begin{frame}{3: What makes a dataset suitable for TD-TSP?}
+  \small
+  Not every time-dependent instance actually \emphasize{needs} time dependency \cite{yang2025neural}:
+  \begin{itemize}
+    \item Time-savings follow a \emphasize{Pareto distribution} --- a ``vital few'' dominate.
+    \item For $\sim$\emphasize{50\%} of instances the optimal route is \emphteal{identical} to the static TSP.
+    \item The top \emphasize{20\%} account for $>$\emphasize{80\%} of all possible savings.
+  \end{itemize}
+  \vspace{0.2em}
+  \begin{block}{Implication for benchmarking}
+    \emphteal{Average tour duration is misleading}: a solver can look good just on static instances. A good TD-TSP benchmark must \emphasize{filter} for instances where temporal dynamics change the optimal tour.
+  \end{block}
+\end{frame}
+
+\section{Proposed approaches}
+
+\begin{frame}{Toward true time dependency: three hybrid approaches}
+  \nocite{ichoua2003vehicle,lucas2014ising,kitai2020designing,koshikawa2024efficient}
+  \small
+  \begin{enumerate}\setlength{\itemsep}{6pt}
+    \item \emphteal{Classic + quantum refinements.}
+      Build on FIFO costs $D_{ij}(t)$ (Ichoua et al.\ 2003); refine critical segments via a TSP-QUBO (Lucas 2014).
+    \item \emphteal{CP master + quantum solvers for subproblems.}
+      A CP model tracks true arrival times (Aguiar et al.\ 2015); quantum solves cluster-level tours.
+    \item \emphteal{FMQA black-box optimization.}
+      Treat the true tour cost as a \emphasize{black box}; FMQA (Koshikawa et al.\ 2024) fits a quadratic surrogate, solves it as a QUBO, and iterates.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Summary}
+  \begin{itemize}
+    \item TD-TSP: TSP with \emphteal{time-dependent} edge costs --- realistic and NP-hard.
+    \item \emphasize{Classical exact} wins on optimality; \emphasize{quantum/QUBO} helps only as a \emphasize{hybrid} subproblem solver.
+    \item \emphasize{Better benchmark:} compare hybrids (not bare solvers), use \emphasize{standard datasets}, separate models from solvers, and \emphasize{filter} for genuinely time-dependent instances.
+    \item \emphasize{Our direction:} hybrid pipelines with \emphasize{true arrival-time} dependency.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+\end{document}

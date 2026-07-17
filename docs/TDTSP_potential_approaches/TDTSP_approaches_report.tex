@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{tdtsp_references.bib}
+
+% Accent colors consistent with the companion slide deck
+\definecolor{emphasisblue}{HTML}{9B2D63}
+\definecolor{emphasisteal}{HTML}{2C7E8C}
+\newcommand{\emphasize}[1]{\textcolor{emphasisblue}{\textit{#1}}}
+\newcommand{\emphteal}[1]{\textcolor{emphasisteal}{\textit{#1}}}
+
+\newcommand{\bench}[1]{\textbf{#1}}
+
+\title{\textbf{Time Dependency in the TDTSP benchmark:\\
+Three Hybrid Quantum--Classical Approaches}}
+\author{Alma Arevalo Loyola\\ \small Optimization Team, SuperQ}
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+The Time-Dependent Traveling Salesperson Problem (TD-TSP) asks for a minimum-cost
+tour when the cost of traversing an edge depends on the time at which it is traversed.
+The study "Benchmarking quantum-vs-classical approaches for Time-Dependent TSP,
+obtains its tours by solving a \emph{static} TSP on a traffic-scaled cost matrix and
+only afterwards evaluating the route under time-varying traffic. This simplification
+sidesteps the defining difficulty of the problem: the cost of each edge should be
+computed from the \emph{actual arrival time} at its origin node. This report proposes and
+analyzes three hybrid quantum--classical approaches that reintroduce true time dependency
+\emph{during} optimization. For each approach we give a full description, explain
+precisely how time dependency is handled, and discuss its benefits, challenges, and
+limitations. We close with a comparative summary.
+\end{abstract}
+
+\tableofcontents
+
+\section{Background and motivation}
+\label{sec:background}
+
+\subsection{The TD-TSP}
+In the classical TSP one seeks a minimum-cost Hamiltonian tour over $n$ nodes given a
+fixed cost matrix. In the \emphasize{Time-Dependent TSP (TD-TSP)} each arc $(i,j)$ has a
+cost that is a function of the departure time,
+\[
+  D_{ij}(t) \;=\; \text{travel time from $i$ to $j$ when departing $i$ at time $t$},
+\]
+so the cost of a tour depends on the order \emph{and} the timing of its visits: the
+arrival time at each node determines the departure time used to evaluate the next arc.
+Time-dependent routing is the realistic model for urban logistics, traffic-aware routing,
+and dynamic supply chains \cite{gendreau2015time}. Both the TSP and the TD-TSP are
+NP-hard, and the cascading dependence of arc costs on arrival times makes the TD-TSP
+substantially harder to model and to solve than its static counterpart.
+
+\subsection{The FIFO property}
+A travel-time model is realistic only if it satisfies the
+\emphteal{First-In-First-Out (FIFO)} property: leaving a node later can never lead to an
+earlier arrival. The standard construction that guarantees FIFO represents each arc by a
+stepwise speed function, from which a continuous piecewise-linear travel-time function
+$D_{ij}(t)$ is derived; FIFO holds whenever the slope of $D_{ij}(t)$ exceeds $-1$
+\cite{ichoua2003vehicle}. The parameters of any FIFO piecewise-linear model can be
+recovered by solving a small linear system per arc \cite{ghiani2014note}. This FIFO
+$D_{ij}(t)$ is the common foundation for all three approaches below.
+
+\subsection{The gap to be closed}
+The current paper replaces the function $D_{ij}(t)$ by a single
+\emphasize{traffic multiplier} per departure window,
+\[
+  D_{ij}(t) \;=\; m_t\, D_{ij},
+\]
+where $D_{ij}$ is a baseline travel time and $m_t$ is a morning/evening/night multiplier
+(e.g.\ $m_t = 1.66$ in the morning, $1.095$ at night). Because every arc is scaled by the
+\emph{same} factor within a window, time only rescales the whole map uniformly: it never
+changes which tour is best, so the optimizer effectively solves a static TSP. The three
+approaches below differ precisely in \emph{how} they put the true, arrival-time-dependent
+cost back into the optimization loop, while still exploiting a quantum solver where it is
+most useful: on a small, well-isolated subproblem.
+
+\section{Approach 1: Classical construction with quantum refinement}
+\label{sec:approach1}
+
+\subsection{Description}
+This approach follows a \emphteal{construct-then-refine} pattern. First, the static
+multiplier is replaced by genuine FIFO piecewise-linear functions $D_{ij}(t)$ for every
+arc \cite{ichoua2003vehicle,ghiani2014note}. A classical \emphasize{time-dependent
+insertion heuristic} then builds an initial tour: candidate insertions are evaluated by
+propagating arrival times along the partial tour, so the construction already ``sees''
+time-varying costs. Finally, the tour is improved locally: congested or expensive
+\emphasize{critical segments} are extracted and each is re-optimized as a small
+Quadratic Unconstrained Binary Optimization (QUBO) problem solved on a quantum annealer
+or gate-based device. A segment of length $k$ is encoded as a $k$-city TSP-QUBO using the
+standard Ising formulation \cite{lucas2014ising}, with arc costs fixed to the value of
+$D_{ij}(t)$ in the relevant departure-time \emph{bucket}. The improved segment is spliced
+back into the tour and the process iterates, much as classical hybrids use the annealer as
+a within-route intensification operator \cite{feld2019hybrid,holliday2025advanced}.
+
+\subsection{How it manages time dependency}
+Time dependency enters in two places. (i) During \emph{construction}, arrival times are
+propagated so that insertion costs use $D_{ij}(t)$ rather than a static matrix. (ii)
+During \emph{refinement}, the departure window of each critical segment is discretized
+into time buckets; within a bucket the arc costs are treated as constant, which yields a
+well-posed QUBO whose coefficients nevertheless reflect the time-of-day cost of that
+segment. Bucketing trades exactness for tractability: finer buckets approximate the true
+$D_{ij}(t)$ more closely at the price of more frequent re-solves.
+
+\subsection{Benefits}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Modular and low-risk.} The classical construction guarantees a feasible,
+        time-aware tour even if the quantum step contributes nothing; quantum is pure
+        upside.
+  \item \textbf{Small, hardware-friendly QUBOs.} Only short segments are sent to the
+        device, keeping qubit counts and connectivity demands modest.
+  \item \textbf{Mature components.} Time-dependent insertion heuristics and the TSP-QUBO
+        encoding are well established \cite{gendreau2015time,lucas2014ising}.
+\end{itemize}
+
+\subsection{Challenges and limitations}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Bucketing error.} Treating costs as constant within a bucket reintroduces
+        a (smaller) version of the multiplier simplification; the route is only as
+        time-accurate as the bucket resolution.
+  \item \textbf{Local scope.} Refining isolated segments cannot fix a globally poor
+        visiting order produced by the heuristic.
+  \item \textbf{Re-evaluation cost.} After each splice, downstream arrival times shift, so
+        the tour must be re-timed --- repeated many times this is non-trivial.
+\end{itemize}
+
+\section{Approach 2: CP master with quantum subproblem solvers}
+\label{sec:approach2}
+
+\subsection{Description}
+Here a \emphasize{Constraint Programming (CP)} model is the global ``brain'' that owns the
+schedule, and the quantum device is delegated only hard combinatorial sub-blocks. The CP
+model represents visits as interval variables and enforces a \emphasize{time-dependent
+no-overlap / travel constraint} so that the master always reasons about true arrival
+times; such a constraint was introduced for urban delivery by
+\citeauthor{aguiar2015time} \cite{aguiar2015time}. The customers are partitioned into
+clusters (a cluster-first decomposition), each cluster-level tour is solved as a TSP-QUBO
+on the quantum device \cite{feld2019hybrid,lucas2014ising}, and the CP master stitches the
+cluster tours together while enforcing global timing and side constraints (time windows,
+precedence, service times). This division of labor mirrors hybrid decomposition methods
+in which clustering is classical and the per-cluster TSP is quantum
+\cite{feld2019hybrid,holliday2025advanced}.
+
+\subsection{How it manages time dependency}
+Time dependency is owned entirely by the CP master: the time-dependent travel constraint
+propagates arrival times exactly, and any candidate stitching that violates the FIFO
+timing or a time window is pruned by constraint propagation. The quantum subproblems
+themselves are static (a fixed small cost matrix per cluster), but because the master
+decides \emph{when} each cluster is entered and \emph{how} the clusters are sequenced in
+time, the overall solution respects true time dependency. This cleanly separates the
+``timing logic'' (CP) from the ``combinatorial search'' (quantum).
+
+\subsection{Benefits}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Rich constraints for free.} CP excels exactly at scheduling-rich variants
+        --- time windows, precedence, no-overlap --- that are awkward to encode directly in
+        a QUBO \cite{aguiar2015time}.
+  \item \textbf{Exact timing.} Arrival times are propagated exactly by the master, so the
+        global solution is genuinely time-feasible.
+  \item \textbf{Scalable decomposition.} Clustering keeps each quantum subproblem small
+        while the master coordinates at scale \cite{feld2019hybrid}.
+\end{itemize}
+
+\subsection{Challenges and limitations}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Decomposition quality.} Cluster boundaries are decided before timing is
+        fully known; a poor clustering caps the achievable solution quality.
+  \item \textbf{Master--subproblem interface.} Round-trips between the CP master and a
+        cloud quantum device add latency and engineering complexity; minimizing the number
+        of quantum calls is important \cite{holliday2025advanced}.
+  \item \textbf{Static subproblems.} Within a cluster the cost is fixed, so intra-cluster
+        time variation is approximated rather than modeled exactly.
+\end{itemize}
+
+\section{Approach 3: FMQA black-box optimization}
+\label{sec:approach3}
+
+\subsection{Description}
+The third approach avoids expressing the time-dependent objective in closed QUBO form
+altogether. The true time-dependent tour cost --- including cascading arrival times and any
+realistic detail a simulator can capture --- is treated as an expensive
+\emphasize{black-box} function $f(\mathbf{x})$ of a binary encoding $\mathbf{x}$ of the
+route. The \emphasize{Factorization Machine with Quantum Annealing (FMQA)} method
+\cite{kitai2020designing} then runs a surrogate-model loop:
+\begin{enumerate}[leftmargin=1.6em]
+  \item train a Factorization Machine (FM) surrogate
+        $\hat f(\mathbf{x}) = w_0 + \sum_i w_i x_i + \sum_{i<j}\langle v_i,v_j\rangle x_i x_j$
+        on the evaluated samples; being a quadratic polynomial, it maps directly to a QUBO;
+  \item solve that QUBO on an annealer / Ising machine to propose a promising route;
+  \item evaluate the proposed route with the true time-dependent cost;
+  \item add the sample to the dataset, retrain, and repeat.
+\end{enumerate}
+For the TSP specifically, the encoding choice is decisive: Gray-style bit labeling that
+maps similar routes to nearby bit strings markedly improves convergence and reduces the
+qubit count relative to a naive one-hot encoding \cite{koshikawa2024efficient}.
+
+\subsection{How it manages time dependency}
+This approach handles time dependency in the most faithful way of the three: the black-box
+evaluator can compute the exact arrival-time-dependent cost (or even call a full traffic
+simulator), with no bucketing and no static sub-instances. Time dependency never has to be
+linearized or embedded in the QUBO --- it lives entirely inside $f(\mathbf{x})$, while the
+annealer only ever optimizes the cheap quadratic surrogate of that function.
+
+\subsection{Benefits}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Exact, arbitrary objective.} Any cost the simulator can compute --- exact
+        FIFO costs, stochastic congestion, penalties --- is optimized as-is.
+  \item \textbf{Sample efficiency.} The FM surrogate reduces the number of expensive
+        black-box evaluations, which is the dominant cost \cite{kitai2020designing}.
+  \item \textbf{Compact encodings.} Gray labeling lowers the bit count for TSP, easing
+        hardware demands \cite{koshikawa2024efficient}.
+\end{itemize}
+
+\subsection{Challenges and limitations}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Surrogate fidelity.} A quadratic FM may poorly approximate a highly
+        non-convex tour-cost landscape, leading to slow or premature convergence.
+  \item \textbf{Encoding sensitivity.} Performance depends strongly on the bit labeling;
+        a bad encoding traps the search in local minima \cite{koshikawa2024efficient}.
+  \item \textbf{Scalability.} Demonstrations remain at modest sizes; scaling to large $n$
+        requires techniques such as sliding-window or domain-wall encodings and remains an
+        open research question.
+\end{itemize}
+
+\section{Comparison and recommendations}
+\label{sec:comparison}
+
+Table~\ref{tab:compare} summarizes how the three approaches trade off fidelity of time
+modeling against maturity and risk.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}
+                >{\raggedright\arraybackslash}p{3.5cm}
+                >{\raggedright\arraybackslash}p{3.2cm}
+                >{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+\textbf{Approach} & \textbf{Time dependency} & \textbf{Main benefit} & \textbf{Main limitation}\\
+\midrule
+1. Classical + quantum refinement
+  & Approximate (time-bucketed segments)
+  & Modular, low-risk, small QUBOs
+  & Bucketing error; local scope \\
+2. CP master + quantum subproblems
+  & Exact at the master; static per cluster
+  & Handles rich scheduling constraints
+  & Clustering quality; interface latency \\
+3. FMQA black-box
+  & Exact (simulator-evaluated)
+  & Most faithful objective
+  & Surrogate fidelity; scalability \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of the three hybrid approaches.}
+\label{tab:compare}
+\end{table}
+
+\paragraph{Recommendation.}
+The three approaches are complementary rather than competing. Approach~1 is the natural
+\emph{first step}: it is low-risk, reuses mature components, and immediately removes the
+uniform-multiplier simplification at the segment level. Approach~2 is preferable when the
+real instance carries \emph{rich side constraints} (time windows, precedence, service
+times), where CP's exact timing is most valuable. Approach~3 is the most
+\emph{research-forward}: it models time dependency exactly and is the right vehicle for
+objectives that resist closed-form QUBO encoding, at the cost of greater uncertainty about
+scaling. A pragmatic program would prototype Approach~1, adopt Approach~2 for
+constraint-heavy deployments, and pursue Approach~3 as the longer-term path to genuinely
+time-dependent quantum optimization. In all three, the guiding principle is the same and
+matches current hardware reality: the quantum device solves only a small, well-isolated
+subproblem, while a classical master guarantees that the route is optimized against real,
+time-dependent costs.
+
+\printbibliography[heading=bibintoc,title={References}]
+
+\appendix
+
+\section{QUBO formulation details}
+\label{app:qubo}
+
+\subsection{Static TSP as a QUBO}
+Following the standard Ising formulation \cite{lucas2014ising}, encode an $N$-city tour
+with binary variables $x_{v,p}\in\{0,1\}$, where $x_{v,p}=1$ iff city $v$ occupies
+position $p$ in the tour ($v,p \in \{1,\dots,N\}$). The cost Hamiltonian is
+\[
+  H \;=\; \underbrace{A\sum_{v=1}^{N}\Big(1-\sum_{p=1}^{N}x_{v,p}\Big)^{2}}_{\text{each city once}}
+       \;+\; \underbrace{A\sum_{p=1}^{N}\Big(1-\sum_{v=1}^{N}x_{v,p}\Big)^{2}}_{\text{each position filled}}
+       \;+\; \underbrace{B\sum_{(u,v)} w_{uv}\sum_{p=1}^{N} x_{u,p}\,x_{v,p+1}}_{\text{tour length}},
+\]
+where $w_{uv}$ is the arc cost and indices on $p$ are taken modulo $N$. Feasibility of the
+two penalty terms is guaranteed when the penalty weight dominates the largest possible
+routing gain, e.g.\ $A > B\max_{u,v} w_{uv}$. The number of binary variables is $N^{2}$;
+compact labelings can reduce this to $O(N\log N)$ \cite{koshikawa2024efficient}.
+
+\subsection{Time-bucketed costs (Approach 1)}
+For a critical segment with departure window $[t_0,t_1)$, partition the window into buckets
+$\{B_1,\dots,B_m\}$ and, within bucket $B_b$, fix the arc cost to its representative value
+$w_{uv}^{(b)} = D_{uv}(\tau_b)$ for a sample time $\tau_b \in B_b$. Solving the segment under
+each bucket yields a piecewise-constant approximation of the true time-dependent segment
+cost; finer buckets reduce the approximation error at the cost of more QUBO solves. The
+segment objective reuses the routing term above with $w_{uv}\!\leftarrow\! w_{uv}^{(b)}$.
+
+\subsection{FM surrogate as a QUBO (Approach 3)}
+The Factorization Machine surrogate
+\[
+  \hat f(\mathbf{x}) \;=\; w_0 \;+\; \sum_{i} w_i x_i \;+\; \sum_{i<j} \langle v_i, v_j\rangle\, x_i x_j,
+  \qquad \langle v_i,v_j\rangle = \sum_{f=1}^{k} v_{i,f}\,v_{j,f},
+\]
+is already quadratic in the binary vector $\mathbf{x}$, so it \emph{is} a QUBO: the linear
+coefficients $w_i$ form the diagonal and the pairwise terms $\langle v_i,v_j\rangle$ the
+off-diagonal entries. Minimizing $\hat f$ on an Ising machine proposes the next route to
+evaluate with the true (Phase~0) time-dependent cost; the new sample updates the FM
+parameters $(w_0, w_i, v_{i,f})$ and the loop repeats \cite{kitai2020designing}. The rank
+$k$ controls surrogate expressiveness versus overfitting, and the binary encoding of routes
+(e.g.\ Gray labeling) governs convergence \cite{koshikawa2024efficient}.
+
+\end{document}
