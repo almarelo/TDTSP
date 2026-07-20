@@ -1,0 +1,243 @@
+{
+  "experiment": "hybrid_cp_cluster_backends",
+  "path": "cluster_hybrid",
+  "instance": "inst_20_2.txt",
+  "matrix": "matrix00",
+  "n": 20,
+  "cluster_backend": "dwave_leap",
+  "max_cluster_size": 5,
+  "n_clusters": 7,
+  "cluster_sizes": [
+    2,
+    4,
+    2,
+    5,
+    1,
+    2,
+    4
+  ],
+  "clusters": [
+    [
+      7,
+      11
+    ],
+    [
+      2,
+      13,
+      14,
+      17
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      1,
+      3,
+      4,
+      6,
+      12
+    ],
+    [
+      19
+    ],
+    [
+      16,
+      18
+    ],
+    [
+      0,
+      8,
+      10,
+      15
+    ]
+  ],
+  "objective": "return_time",
+  "reference": {
+    "return_time": 13176.0,
+    "optimal": true,
+    "raw": "13176*"
+  },
+  "wall_clock_start_iso": "2026-07-17T22:33:43.012857+00:00",
+  "status": "FEASIBLE",
+  "solver": "cluster-dwave_leap + CP-SAT timed stitch",
+  "tour_open": [
+    0,
+    10,
+    8,
+    15,
+    5,
+    9,
+    14,
+    2,
+    17,
+    13,
+    7,
+    11,
+    3,
+    6,
+    12,
+    4,
+    1,
+    19,
+    18,
+    16
+  ],
+  "return_time": 14263,
+  "return_time_oracle": 14263.0,
+  "objective_bound": 3692.0,
+  "solve_time_seconds": 60.058296000000006,
+  "cluster_solve_seconds": 23.771950791000563,
+  "cluster_cycles": [
+    [
+      7,
+      11
+    ],
+    [
+      13,
+      14,
+      2,
+      17
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      4,
+      1,
+      3,
+      6,
+      12
+    ],
+    [
+      19
+    ],
+    [
+      16,
+      18
+    ],
+    [
+      0,
+      10,
+      8,
+      15
+    ]
+  ],
+  "cluster_static_costs": [
+    262.0,
+    861.0,
+    827.0,
+    1370.0,
+    0.0,
+    760.0,
+    1888.0
+  ],
+  "cluster_entry_times": [
+    198.0,
+    198.0,
+    198.0,
+    198.0,
+    198.0,
+    198.0,
+    198.0
+  ],
+  "rotations": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    1,
+    0
+  ],
+  "refine_pass_used": 0,
+  "history": [
+    {
+      "pass": 0,
+      "entry_times": [
+        198.0,
+        198.0,
+        198.0,
+        198.0,
+        198.0,
+        198.0,
+        198.0
+      ],
+      "cycles": [
+        [
+          7,
+          11
+        ],
+        [
+          13,
+          14,
+          2,
+          17
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          4,
+          1,
+          3,
+          6,
+          12
+        ],
+        [
+          19
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          0,
+          10,
+          8,
+          15
+        ]
+      ],
+      "static_costs": [
+        262.0,
+        861.0,
+        827.0,
+        1370.0,
+        0.0,
+        760.0,
+        1888.0
+      ],
+      "cluster_solve_seconds": 23.771950791000563,
+      "stitch_status": "FEASIBLE",
+      "return_time": 14263,
+      "tour_open": [
+        0,
+        10,
+        8,
+        15,
+        5,
+        9,
+        14,
+        2,
+        17,
+        13,
+        7,
+        11,
+        3,
+        6,
+        12,
+        4,
+        1,
+        19,
+        18,
+        16
+      ],
+      "stitch_time_seconds": 60.058296000000006
+    }
+  ],
+  "wall_seconds": 83.85945650000212,
+  "gap_to_reference": 0.08249848208864602,
+  "wall_clock_end_iso": "2026-07-17T22:35:07.457914+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "experiment": "hybrid_cp_cluster_backends",
+  "path": "cp_full",
+  "instance": "inst_10_2.txt",
+  "matrix": "matrix00",
+  "n": 10,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "objective": "return_time",
+  "status": "FEASIBLE",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    9,
+    5,
+    4,
+    2,
+    8,
+    1,
+    6,
+    3,
+    7
+  ],
+  "return_time": 6854,
+  "return_time_oracle": 6854.0,
+  "objective_bound": 1741.0,
+  "solve_time_seconds": 60.026236000000004,
+  "wall_seconds": 60.03337683399877,
+  "reference": {
+    "return_time": 6854.0,
+    "optimal": true,
+    "raw": "6854*"
+  },
+  "gap_to_reference": 0.0,
+  "wall_clock_start_iso": "2026-07-17T22:25:02.358942+00:00",
+  "wall_clock_end_iso": "2026-07-17T22:26:02.946379+00:00"
+}

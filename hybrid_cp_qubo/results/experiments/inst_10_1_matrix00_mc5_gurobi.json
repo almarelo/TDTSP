@@ -1,0 +1,164 @@
+{
+  "experiment": "hybrid_cp_refined_cluster_solvers",
+  "instance": "inst_10_1.txt",
+  "matrix": "matrix00",
+  "n": 10,
+  "max_cluster_size": 5,
+  "n_clusters": 3,
+  "cluster_sizes": [
+    5,
+    1,
+    4
+  ],
+  "clusters": [
+    [
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    [
+      1
+    ],
+    [
+      0,
+      4,
+      5,
+      6
+    ]
+  ],
+  "use_qubo": true,
+  "refined_backend": "gurobi",
+  "objective": "return_time",
+  "wall_clock_start_iso": "2026-07-17T21:58:36.436921+00:00",
+  "path": "cluster_refined_cp",
+  "status": "OPTIMAL",
+  "solver": "refined/gurobi cluster TSP + CP-SAT timed stitch",
+  "tour_open": [
+    0,
+    6,
+    4,
+    5,
+    7,
+    2,
+    8,
+    9,
+    3,
+    1
+  ],
+  "return_time": 8244,
+  "return_time_oracle": 8244.0,
+  "objective_bound": 8244.0,
+  "solve_time_seconds": 0.13670000000000002,
+  "cluster_solve_seconds": 0.10492704199714353,
+  "cluster_cycles": [
+    [
+      2,
+      8,
+      9,
+      3,
+      7
+    ],
+    [
+      1
+    ],
+    [
+      0,
+      6,
+      4,
+      5
+    ]
+  ],
+  "cluster_static_costs": [
+    1396.0,
+    0.0,
+    1641.0
+  ],
+  "cluster_entry_times": [
+    279.0,
+    279.0,
+    279.0
+  ],
+  "rotations": [
+    4,
+    0,
+    0
+  ],
+  "arrivals": [
+    0.0,
+    418.0,
+    1345.0,
+    2130.0,
+    2985.0,
+    3202.0,
+    4075.0,
+    4837.0,
+    5439.0,
+    6520.0,
+    8244.0
+  ],
+  "departures": [
+    279.0,
+    623.0,
+    1597.0,
+    2367.0,
+    3132.0,
+    3348.0,
+    4360.0,
+    5039.0,
+    5683.0,
+    6626.0
+  ],
+  "refine_pass_used": 0,
+  "history": [
+    {
+      "pass": 0,
+      "entry_times": [
+        279.0,
+        279.0,
+        279.0
+      ],
+      "cycles": [
+        [
+          2,
+          8,
+          9,
+          3,
+          7
+        ],
+        [
+          1
+        ],
+        [
+          0,
+          6,
+          4,
+          5
+        ]
+      ],
+      "static_costs": [
+        1396.0,
+        0.0,
+        1641.0
+      ],
+      "cluster_solve_seconds": 0.10492704199714353,
+      "stitch_status": "OPTIMAL",
+      "return_time": 8244,
+      "tour_open": [
+        0,
+        6,
+        4,
+        5,
+        7,
+        2,
+        8,
+        9,
+        3,
+        1
+      ],
+      "stitch_time_seconds": 0.13670000000000002
+    }
+  ],
+  "wall_clock_end_iso": "2026-07-17T21:58:37.232410+00:00"
+}

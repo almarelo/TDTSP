@@ -1,0 +1,53 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "path": "cp_full",
+  "dataset": "data/instances",
+  "instance_file": "tdtsp_n5.json",
+  "n": 5,
+  "slot": "morning_peak",
+  "slot_label": "Morning Peak (8 AM)",
+  "slot_multiplier": 1.5183,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "status": "OPTIMAL",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    3,
+    1,
+    2
+  ],
+  "return_time": 32629,
+  "tour_duration_seconds": 3829.0,
+  "start_time_seconds": 28800.0,
+  "solve_time_seconds": 0.017161000000000003,
+  "wall_seconds": 0.018795041003613733,
+  "objective_bound": 32629.0,
+  "meta": {
+    "source_file": "/Users/almarelo/SuperQ/TDTSP/data/instances/tdtsp_n5.json",
+    "n": 5,
+    "city": "New York",
+    "tz": "America/New_York",
+    "metric": "driving_duration_seconds",
+    "slot_name": "morning_peak",
+    "slot_label": "Morning Peak (8 AM)",
+    "slot_hour": 8,
+    "slot_multiplier": 1.5183,
+    "locations": [
+      "Times Square, New York, NY",
+      "Wall Street, New York, NY",
+      "Central Park, New York, NY",
+      "Brooklyn Bridge, New York, NY",
+      "Penn Station, New York, NY"
+    ],
+    "multipliers": {
+      "morning_peak": 1.5183,
+      "midday": 1.5214,
+      "evening_peak": 1.5912,
+      "night": 1.2971
+    }
+  },
+  "wall_clock_start_iso": "2026-07-20T15:55:35.998055+00:00",
+  "wall_clock_end_iso": "2026-07-20T15:55:35.998062+00:00"
+}

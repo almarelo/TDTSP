@@ -1,0 +1,992 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "dataset": "data/instances",
+  "protocol": {
+    "cp_full_when": "n <= 15",
+    "cluster_when": "n > 15",
+    "max_cluster_size": 15,
+    "backends": [
+      "cp",
+      "gurobi",
+      "dwave_sa",
+      "dwave_leap"
+    ],
+    "slots": [
+      "morning_peak",
+      "midday",
+      "evening_peak",
+      "night"
+    ],
+    "sizes": [
+      5,
+      10,
+      25,
+      50,
+      100
+    ]
+  },
+  "wall_clock_start_iso": "2026-07-20T15:55:35.978909+00:00",
+  "wall_clock_end_iso": "2026-07-20T16:27:21.355268+00:00",
+  "table": [
+    {
+      "n": 5,
+      "slot": "morning_peak",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 32629,
+      "tour_duration_seconds": 3829.0,
+      "wall_seconds": 0.018795041003613733,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n5_morning_peak_cp_full.json"
+    },
+    {
+      "n": 5,
+      "slot": "midday",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 47037,
+      "tour_duration_seconds": 3837.0,
+      "wall_seconds": 0.015973125002346933,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n5_midday_cp_full.json"
+    },
+    {
+      "n": 5,
+      "slot": "evening_peak",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 68812,
+      "tour_duration_seconds": 4012.0,
+      "wall_seconds": 0.016560957999899983,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n5_evening_peak_cp_full.json"
+    },
+    {
+      "n": 5,
+      "slot": "night",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 82471,
+      "tour_duration_seconds": 3271.0,
+      "wall_seconds": 0.01673645799746737,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n5_night_cp_full.json"
+    },
+    {
+      "n": 10,
+      "slot": "morning_peak",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 35537,
+      "tour_duration_seconds": 6737.0,
+      "wall_seconds": 26.391247041996394,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n10_morning_peak_cp_full.json"
+    },
+    {
+      "n": 10,
+      "slot": "midday",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 49816,
+      "tour_duration_seconds": 6616.0,
+      "wall_seconds": 40.50331770900084,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n10_midday_cp_full.json"
+    },
+    {
+      "n": 10,
+      "slot": "evening_peak",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 71588,
+      "tour_duration_seconds": 6788.0,
+      "wall_seconds": 52.6417574159932,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n10_evening_peak_cp_full.json"
+    },
+    {
+      "n": 10,
+      "slot": "night",
+      "backend": "cp_full",
+      "status": "OPTIMAL",
+      "return_time": 84574,
+      "tour_duration_seconds": 5374.0,
+      "wall_seconds": 25.881451499997638,
+      "cluster_sizes": null,
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n10_night_cp_full.json"
+    },
+    {
+      "n": 25,
+      "slot": "morning_peak",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 49570,
+      "tour_duration_seconds": 20770.0,
+      "wall_seconds": 0.14614745799917728,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_morning_peak_cluster_cp.json"
+    },
+    {
+      "n": 25,
+      "slot": "morning_peak",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 49570,
+      "tour_duration_seconds": 20770.0,
+      "wall_seconds": 0.3181404169954476,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_morning_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 25,
+      "slot": "morning_peak",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 53554,
+      "tour_duration_seconds": 24754.0,
+      "wall_seconds": 0.7939285829997971,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_morning_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 25,
+      "slot": "morning_peak",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 49570,
+      "tour_duration_seconds": 20770.0,
+      "wall_seconds": 17.45662875000562,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_morning_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 25,
+      "slot": "midday",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 61989,
+      "tour_duration_seconds": 18789.0,
+      "wall_seconds": 0.07539412500045728,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_midday_cluster_cp.json"
+    },
+    {
+      "n": 25,
+      "slot": "midday",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 61989,
+      "tour_duration_seconds": 18789.0,
+      "wall_seconds": 0.16669270799320657,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_midday_cluster_gurobi.json"
+    },
+    {
+      "n": 25,
+      "slot": "midday",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 66438,
+      "tour_duration_seconds": 23238.0,
+      "wall_seconds": 0.6733210419988609,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_midday_cluster_dwave_sa.json"
+    },
+    {
+      "n": 25,
+      "slot": "midday",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 61989,
+      "tour_duration_seconds": 18789.0,
+      "wall_seconds": 15.981666167004732,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_midday_cluster_dwave_leap.json"
+    },
+    {
+      "n": 25,
+      "slot": "evening_peak",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 83068,
+      "tour_duration_seconds": 18268.0,
+      "wall_seconds": 0.09928358400065918,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_evening_peak_cluster_cp.json"
+    },
+    {
+      "n": 25,
+      "slot": "evening_peak",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 83068,
+      "tour_duration_seconds": 18268.0,
+      "wall_seconds": 0.1745934579957975,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_evening_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 25,
+      "slot": "evening_peak",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 87333,
+      "tour_duration_seconds": 22533.0,
+      "wall_seconds": 0.6673178750061197,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_evening_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 25,
+      "slot": "evening_peak",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 83068,
+      "tour_duration_seconds": 18268.0,
+      "wall_seconds": 15.48456100000476,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_evening_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 25,
+      "slot": "night",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 94049,
+      "tour_duration_seconds": 14849.0,
+      "wall_seconds": 0.06996254100522492,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_night_cluster_cp.json"
+    },
+    {
+      "n": 25,
+      "slot": "night",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 94049,
+      "tour_duration_seconds": 14849.0,
+      "wall_seconds": 0.14924337500269758,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_night_cluster_gurobi.json"
+    },
+    {
+      "n": 25,
+      "slot": "night",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 98206,
+      "tour_duration_seconds": 19006.0,
+      "wall_seconds": 0.6288205410019145,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_night_cluster_dwave_sa.json"
+    },
+    {
+      "n": 25,
+      "slot": "night",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 94049,
+      "tour_duration_seconds": 14849.0,
+      "wall_seconds": 18.72676983400015,
+      "cluster_sizes": [
+        12,
+        13
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n25_night_cluster_dwave_leap.json"
+    },
+    {
+      "n": 50,
+      "slot": "morning_peak",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 59410,
+      "tour_duration_seconds": 30610.0,
+      "wall_seconds": 20.55737933299679,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_morning_peak_cluster_cp.json"
+    },
+    {
+      "n": 50,
+      "slot": "morning_peak",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 59410,
+      "tour_duration_seconds": 30610.0,
+      "wall_seconds": 23.67231591599557,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_morning_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 50,
+      "slot": "morning_peak",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 66001,
+      "tour_duration_seconds": 37201.0,
+      "wall_seconds": 23.150440666002396,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_morning_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 50,
+      "slot": "morning_peak",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 59410,
+      "tour_duration_seconds": 30610.0,
+      "wall_seconds": 51.54900991600152,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_morning_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 50,
+      "slot": "midday",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 71722,
+      "tour_duration_seconds": 28522.0,
+      "wall_seconds": 23.40581154100073,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_midday_cluster_cp.json"
+    },
+    {
+      "n": 50,
+      "slot": "midday",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 71722,
+      "tour_duration_seconds": 28522.0,
+      "wall_seconds": 27.378628124999523,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_midday_cluster_gurobi.json"
+    },
+    {
+      "n": 50,
+      "slot": "midday",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 79403,
+      "tour_duration_seconds": 36203.0,
+      "wall_seconds": 23.546392749994993,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_midday_cluster_dwave_sa.json"
+    },
+    {
+      "n": 50,
+      "slot": "midday",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 71722,
+      "tour_duration_seconds": 28522.0,
+      "wall_seconds": 56.00618037499953,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_midday_cluster_dwave_leap.json"
+    },
+    {
+      "n": 50,
+      "slot": "evening_peak",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 90668,
+      "tour_duration_seconds": 25868.0,
+      "wall_seconds": 14.758059166000749,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_evening_peak_cluster_cp.json"
+    },
+    {
+      "n": 50,
+      "slot": "evening_peak",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 90668,
+      "tour_duration_seconds": 25868.0,
+      "wall_seconds": 13.249280374999216,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_evening_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 50,
+      "slot": "evening_peak",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 97299,
+      "tour_duration_seconds": 32499.0,
+      "wall_seconds": 15.622696124999493,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_evening_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 50,
+      "slot": "evening_peak",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 90668,
+      "tour_duration_seconds": 25868.0,
+      "wall_seconds": 45.843429583001125,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_evening_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 50,
+      "slot": "night",
+      "backend": "cp",
+      "status": "OPTIMAL",
+      "return_time": 101420,
+      "tour_duration_seconds": 22220.0,
+      "wall_seconds": 10.764867500001856,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_night_cluster_cp.json"
+    },
+    {
+      "n": 50,
+      "slot": "night",
+      "backend": "gurobi",
+      "status": "OPTIMAL",
+      "return_time": 101420,
+      "tour_duration_seconds": 22220.0,
+      "wall_seconds": 11.367552791998605,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_night_cluster_gurobi.json"
+    },
+    {
+      "n": 50,
+      "slot": "night",
+      "backend": "dwave_sa",
+      "status": "OPTIMAL",
+      "return_time": 108484,
+      "tour_duration_seconds": 29284.0,
+      "wall_seconds": 12.787220208003419,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_night_cluster_dwave_sa.json"
+    },
+    {
+      "n": 50,
+      "slot": "night",
+      "backend": "dwave_leap",
+      "status": "OPTIMAL",
+      "return_time": 101420,
+      "tour_duration_seconds": 22220.0,
+      "wall_seconds": 42.19724679100182,
+      "cluster_sizes": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n50_night_cluster_dwave_leap.json"
+    },
+    {
+      "n": 100,
+      "slot": "morning_peak",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 79381,
+      "tour_duration_seconds": 50581.0,
+      "wall_seconds": 60.433433250000235,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_morning_peak_cluster_cp.json"
+    },
+    {
+      "n": 100,
+      "slot": "morning_peak",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 79816,
+      "tour_duration_seconds": 51016.0,
+      "wall_seconds": 60.600628875006805,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_morning_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 100,
+      "slot": "morning_peak",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 89189,
+      "tour_duration_seconds": 60389.0,
+      "wall_seconds": 63.62318066699663,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_morning_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 100,
+      "slot": "morning_peak",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 79070,
+      "tour_duration_seconds": 50270.0,
+      "wall_seconds": 132.64615279199643,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_morning_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 100,
+      "slot": "midday",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 89317,
+      "tour_duration_seconds": 46117.0,
+      "wall_seconds": 60.480813207999745,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_midday_cluster_cp.json"
+    },
+    {
+      "n": 100,
+      "slot": "midday",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 89133,
+      "tour_duration_seconds": 45933.0,
+      "wall_seconds": 60.81166487500013,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_midday_cluster_gurobi.json"
+    },
+    {
+      "n": 100,
+      "slot": "midday",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 95304,
+      "tour_duration_seconds": 52104.0,
+      "wall_seconds": 62.80421737500001,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_midday_cluster_dwave_sa.json"
+    },
+    {
+      "n": 100,
+      "slot": "midday",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 88931,
+      "tour_duration_seconds": 45731.0,
+      "wall_seconds": 133.4408621659968,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_midday_cluster_dwave_leap.json"
+    },
+    {
+      "n": 100,
+      "slot": "evening_peak",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 105182,
+      "tour_duration_seconds": 40382.0,
+      "wall_seconds": 60.450954749998346,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_evening_peak_cluster_cp.json"
+    },
+    {
+      "n": 100,
+      "slot": "evening_peak",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 104481,
+      "tour_duration_seconds": 39681.0,
+      "wall_seconds": 60.5476362920017,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_evening_peak_cluster_gurobi.json"
+    },
+    {
+      "n": 100,
+      "slot": "evening_peak",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 111773,
+      "tour_duration_seconds": 46973.0,
+      "wall_seconds": 62.728105250003864,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_evening_peak_cluster_dwave_sa.json"
+    },
+    {
+      "n": 100,
+      "slot": "evening_peak",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 105887,
+      "tour_duration_seconds": 41087.0,
+      "wall_seconds": 136.4746955840019,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_evening_peak_cluster_dwave_leap.json"
+    },
+    {
+      "n": 100,
+      "slot": "night",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 116695,
+      "tour_duration_seconds": 37495.0,
+      "wall_seconds": 60.49853795799572,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_night_cluster_cp.json"
+    },
+    {
+      "n": 100,
+      "slot": "night",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 116042,
+      "tour_duration_seconds": 36842.0,
+      "wall_seconds": 60.51645441599976,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_night_cluster_gurobi.json"
+    },
+    {
+      "n": 100,
+      "slot": "night",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 123842,
+      "tour_duration_seconds": 44642.0,
+      "wall_seconds": 62.754042250002385,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_night_cluster_dwave_sa.json"
+    },
+    {
+      "n": 100,
+      "slot": "night",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 117447,
+      "tour_duration_seconds": 38247.0,
+      "wall_seconds": 132.63572495801054,
+      "cluster_sizes": [
+        14,
+        8,
+        8,
+        10,
+        11,
+        15,
+        9,
+        11,
+        14
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/original/tdtsp_n100_night_cluster_dwave_leap.json"
+    }
+  ]
+}

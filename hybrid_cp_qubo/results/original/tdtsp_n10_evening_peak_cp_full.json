@@ -1,0 +1,63 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "path": "cp_full",
+  "dataset": "data/instances",
+  "instance_file": "tdtsp_n10.json",
+  "n": 10,
+  "slot": "evening_peak",
+  "slot_label": "Evening Peak (6 PM)",
+  "slot_multiplier": 1.6296,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "status": "OPTIMAL",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    5,
+    6,
+    1,
+    7,
+    3,
+    9,
+    2,
+    8
+  ],
+  "return_time": 71588,
+  "tour_duration_seconds": 6788.0,
+  "start_time_seconds": 64800.0,
+  "solve_time_seconds": 52.639537000000004,
+  "wall_seconds": 52.6417574159932,
+  "objective_bound": 71588.0,
+  "meta": {
+    "source_file": "/Users/almarelo/SuperQ/TDTSP/data/instances/tdtsp_n10.json",
+    "n": 10,
+    "city": "New York",
+    "tz": "America/New_York",
+    "metric": "driving_duration_seconds",
+    "slot_name": "evening_peak",
+    "slot_label": "Evening Peak (6 PM)",
+    "slot_hour": 18,
+    "slot_multiplier": 1.6296,
+    "locations": [
+      "Times Square, New York, NY",
+      "Wall Street, New York, NY",
+      "Central Park, New York, NY",
+      "Brooklyn Bridge, New York, NY",
+      "Penn Station, New York, NY",
+      "Empire State Building, New York, NY",
+      "Grand Central Terminal, New York, NY",
+      "World Trade Center, New York, NY",
+      "Lincoln Center, New York, NY",
+      "Yankee Stadium, Bronx, NY"
+    ],
+    "multipliers": {
+      "morning_peak": 1.6168,
+      "midday": 1.588,
+      "evening_peak": 1.6296,
+      "night": 1.2898
+    }
+  },
+  "wall_clock_start_iso": "2026-07-20T15:57:35.588169+00:00",
+  "wall_clock_end_iso": "2026-07-20T15:57:35.588188+00:00"
+}

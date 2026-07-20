@@ -1,0 +1,53 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "path": "cp_full",
+  "dataset": "data/instances",
+  "instance_file": "tdtsp_n5.json",
+  "n": 5,
+  "slot": "evening_peak",
+  "slot_label": "Evening Peak (6 PM)",
+  "slot_multiplier": 1.5912,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "status": "OPTIMAL",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    3,
+    1,
+    2
+  ],
+  "return_time": 68812,
+  "tour_duration_seconds": 4012.0,
+  "start_time_seconds": 64800.0,
+  "solve_time_seconds": 0.015906,
+  "wall_seconds": 0.016560957999899983,
+  "objective_bound": 68812.0,
+  "meta": {
+    "source_file": "/Users/almarelo/SuperQ/TDTSP/data/instances/tdtsp_n5.json",
+    "n": 5,
+    "city": "New York",
+    "tz": "America/New_York",
+    "metric": "driving_duration_seconds",
+    "slot_name": "evening_peak",
+    "slot_label": "Evening Peak (6 PM)",
+    "slot_hour": 18,
+    "slot_multiplier": 1.5912,
+    "locations": [
+      "Times Square, New York, NY",
+      "Wall Street, New York, NY",
+      "Central Park, New York, NY",
+      "Brooklyn Bridge, New York, NY",
+      "Penn Station, New York, NY"
+    ],
+    "multipliers": {
+      "morning_peak": 1.5183,
+      "midday": 1.5214,
+      "evening_peak": 1.5912,
+      "night": 1.2971
+    }
+  },
+  "wall_clock_start_iso": "2026-07-20T15:55:36.031360+00:00",
+  "wall_clock_end_iso": "2026-07-20T15:55:36.031366+00:00"
+}

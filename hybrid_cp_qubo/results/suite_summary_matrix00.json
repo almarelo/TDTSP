@@ -1,0 +1,856 @@
+{
+  "experiment": "hybrid_cp_cluster_backends",
+  "protocol": {
+    "cp_full_when": "p <= 10",
+    "cluster_when": "p > 10",
+    "max_cluster_size": 5,
+    "cluster_backends": [
+      "cp",
+      "gurobi",
+      "dwave_sa",
+      "dwave_leap",
+      "qaoa",
+      "quanfluence"
+    ]
+  },
+  "wall_clock_end_iso": "2026-07-17T22:40:05.643114+00:00",
+  "table": [
+    {
+      "instance": "inst_10_1.txt",
+      "n": 10,
+      "matrix": "matrix00",
+      "backend": "cp_full",
+      "status": "FEASIBLE",
+      "return_time": 7605,
+      "reference": "7605*",
+      "gap_to_reference": 0.0,
+      "wall_seconds": 60.10657779200119,
+      "cluster_sizes": null,
+      "error": null
+    },
+    {
+      "instance": "inst_10_2.txt",
+      "n": 10,
+      "matrix": "matrix00",
+      "backend": "cp_full",
+      "status": "FEASIBLE",
+      "return_time": 6854,
+      "reference": "6854*",
+      "gap_to_reference": 0.0,
+      "wall_seconds": 60.03337683399877,
+      "cluster_sizes": null,
+      "error": null
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 13475,
+      "reference": "12836*",
+      "gap_to_reference": 0.04978186350888127,
+      "wall_seconds": 60.15746233299433,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 13475,
+      "reference": "12836*",
+      "gap_to_reference": 0.04978186350888127,
+      "wall_seconds": 60.27266225000494,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 13475,
+      "reference": "12836*",
+      "gap_to_reference": 0.04978186350888127,
+      "wall_seconds": 60.34848379199684,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 13475,
+      "reference": "12836*",
+      "gap_to_reference": 0.04978186350888127,
+      "wall_seconds": 93.12193445899902,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "qaoa",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: AWS credentials not found for QAOA backend"
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "quanfluence",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: Quanfluence credentials not found in environment variables"
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 14287,
+      "reference": "13176*",
+      "gap_to_reference": 0.08431997571341833,
+      "wall_seconds": 60.174391749998904,
+      "cluster_sizes": [
+        2,
+        4,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 14287,
+      "reference": "13176*",
+      "gap_to_reference": 0.08431997571341833,
+      "wall_seconds": 60.10525154100469,
+      "cluster_sizes": [
+        2,
+        4,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 14287,
+      "reference": "13176*",
+      "gap_to_reference": 0.08431997571341833,
+      "wall_seconds": 60.21505158299988,
+      "cluster_sizes": [
+        2,
+        4,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 14263,
+      "reference": "13176*",
+      "gap_to_reference": 0.08249848208864602,
+      "wall_seconds": 83.85945650000212,
+      "cluster_sizes": [
+        2,
+        4,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "qaoa",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: AWS credentials not found for QAOA backend"
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "quanfluence",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: Quanfluence credentials not found in environment variables"
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 18532,
+      "reference": "17167",
+      "gap_to_reference": 0.07951301916467642,
+      "wall_seconds": 60.40787029099738,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "gurobi",
+      "status": "FEASIBLE",
+      "return_time": 19235,
+      "reference": "17167",
+      "gap_to_reference": 0.12046368031688705,
+      "wall_seconds": 60.24637937499938,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "dwave_sa",
+      "status": "FEASIBLE",
+      "return_time": 19009,
+      "reference": "17167",
+      "gap_to_reference": 0.10729888740024465,
+      "wall_seconds": 60.47008462499798,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 19100,
+      "reference": "17167",
+      "gap_to_reference": 0.11259975534455642,
+      "wall_seconds": 112.40326916599588,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3
+      ],
+      "error": null
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "qaoa",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: AWS credentials not found for QAOA backend"
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "quanfluence",
+      "status": "ERROR",
+      "return_time": null,
+      "reference": null,
+      "gap_to_reference": null,
+      "wall_seconds": null,
+      "cluster_sizes": null,
+      "error": "ValueError: Quanfluence credentials not found in environment variables"
+    }
+  ],
+  "best_hybrid_by_instance": {
+    "inst_20_1.txt": {
+      "instance": "inst_20_1.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 13475,
+      "reference": "12836*",
+      "gap_to_reference": 0.04978186350888127,
+      "wall_seconds": 60.15746233299433,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "error": null
+    },
+    "inst_20_2.txt": {
+      "instance": "inst_20_2.txt",
+      "n": 20,
+      "matrix": "matrix00",
+      "backend": "dwave_leap",
+      "status": "FEASIBLE",
+      "return_time": 14263,
+      "reference": "13176*",
+      "gap_to_reference": 0.08249848208864602,
+      "wall_seconds": 83.85945650000212,
+      "cluster_sizes": [
+        2,
+        4,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      "error": null
+    },
+    "inst_30_1.txt": {
+      "instance": "inst_30_1.txt",
+      "n": 30,
+      "matrix": "matrix00",
+      "backend": "cp",
+      "status": "FEASIBLE",
+      "return_time": 18532,
+      "reference": "17167",
+      "gap_to_reference": 0.07951301916467642,
+      "wall_seconds": 60.40787029099738,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3
+      ],
+      "error": null
+    }
+  },
+  "instances": [
+    {
+      "instance": "inst_10_1.txt",
+      "matrix": "matrix00",
+      "n": 10,
+      "runs": {
+        "cp_full": {
+          "status": "FEASIBLE",
+          "return_time": 7605,
+          "gap_to_reference": 0.0,
+          "wall_seconds": 60.10657779200119,
+          "reference": {
+            "return_time": 7605.0,
+            "optimal": true,
+            "raw": "7605*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_10_1_matrix00_cp_full.json",
+          "error": null
+        }
+      }
+    },
+    {
+      "instance": "inst_10_2.txt",
+      "matrix": "matrix00",
+      "n": 10,
+      "runs": {
+        "cp_full": {
+          "status": "FEASIBLE",
+          "return_time": 6854,
+          "gap_to_reference": 0.0,
+          "wall_seconds": 60.03337683399877,
+          "reference": {
+            "return_time": 6854.0,
+            "optimal": true,
+            "raw": "6854*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_10_2_matrix00_cp_full.json",
+          "error": null
+        }
+      }
+    },
+    {
+      "instance": "inst_20_1.txt",
+      "matrix": "matrix00",
+      "n": 20,
+      "runs": {
+        "cp": {
+          "status": "FEASIBLE",
+          "return_time": 13475,
+          "gap_to_reference": 0.04978186350888127,
+          "wall_seconds": 60.15746233299433,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            3,
+            2,
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "reference": {
+            "return_time": 12836.0,
+            "optimal": true,
+            "raw": "12836*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_1_matrix00_cluster_cp.json",
+          "error": null
+        },
+        "gurobi": {
+          "status": "FEASIBLE",
+          "return_time": 13475,
+          "gap_to_reference": 0.04978186350888127,
+          "wall_seconds": 60.27266225000494,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            3,
+            2,
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "reference": {
+            "return_time": 12836.0,
+            "optimal": true,
+            "raw": "12836*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_1_matrix00_cluster_gurobi.json",
+          "error": null
+        },
+        "dwave_sa": {
+          "status": "FEASIBLE",
+          "return_time": 13475,
+          "gap_to_reference": 0.04978186350888127,
+          "wall_seconds": 60.34848379199684,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            3,
+            2,
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "reference": {
+            "return_time": 12836.0,
+            "optimal": true,
+            "raw": "12836*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_1_matrix00_cluster_dwave_sa.json",
+          "error": null
+        },
+        "dwave_leap": {
+          "status": "FEASIBLE",
+          "return_time": 13475,
+          "gap_to_reference": 0.04978186350888127,
+          "wall_seconds": 93.12193445899902,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            3,
+            2,
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "reference": {
+            "return_time": 12836.0,
+            "optimal": true,
+            "raw": "12836*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_1_matrix00_cluster_dwave_leap.json",
+          "error": null
+        },
+        "qaoa": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: AWS credentials not found for QAOA backend"
+        },
+        "quanfluence": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: Quanfluence credentials not found in environment variables"
+        }
+      }
+    },
+    {
+      "instance": "inst_20_2.txt",
+      "matrix": "matrix00",
+      "n": 20,
+      "runs": {
+        "cp": {
+          "status": "FEASIBLE",
+          "return_time": 14287,
+          "gap_to_reference": 0.08431997571341833,
+          "wall_seconds": 60.174391749998904,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            2,
+            4,
+            2,
+            5,
+            1,
+            2,
+            4
+          ],
+          "reference": {
+            "return_time": 13176.0,
+            "optimal": true,
+            "raw": "13176*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_2_matrix00_cluster_cp.json",
+          "error": null
+        },
+        "gurobi": {
+          "status": "FEASIBLE",
+          "return_time": 14287,
+          "gap_to_reference": 0.08431997571341833,
+          "wall_seconds": 60.10525154100469,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            2,
+            4,
+            2,
+            5,
+            1,
+            2,
+            4
+          ],
+          "reference": {
+            "return_time": 13176.0,
+            "optimal": true,
+            "raw": "13176*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_2_matrix00_cluster_gurobi.json",
+          "error": null
+        },
+        "dwave_sa": {
+          "status": "FEASIBLE",
+          "return_time": 14287,
+          "gap_to_reference": 0.08431997571341833,
+          "wall_seconds": 60.21505158299988,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            2,
+            4,
+            2,
+            5,
+            1,
+            2,
+            4
+          ],
+          "reference": {
+            "return_time": 13176.0,
+            "optimal": true,
+            "raw": "13176*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_2_matrix00_cluster_dwave_sa.json",
+          "error": null
+        },
+        "dwave_leap": {
+          "status": "FEASIBLE",
+          "return_time": 14263,
+          "gap_to_reference": 0.08249848208864602,
+          "wall_seconds": 83.85945650000212,
+          "n_clusters": 7,
+          "cluster_sizes": [
+            2,
+            4,
+            2,
+            5,
+            1,
+            2,
+            4
+          ],
+          "reference": {
+            "return_time": 13176.0,
+            "optimal": true,
+            "raw": "13176*"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_20_2_matrix00_cluster_dwave_leap.json",
+          "error": null
+        },
+        "qaoa": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: AWS credentials not found for QAOA backend"
+        },
+        "quanfluence": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: Quanfluence credentials not found in environment variables"
+        }
+      }
+    },
+    {
+      "instance": "inst_30_1.txt",
+      "matrix": "matrix00",
+      "n": 30,
+      "runs": {
+        "cp": {
+          "status": "FEASIBLE",
+          "return_time": 18532,
+          "gap_to_reference": 0.07951301916467642,
+          "wall_seconds": 60.40787029099738,
+          "n_clusters": 8,
+          "cluster_sizes": [
+            5,
+            5,
+            4,
+            2,
+            5,
+            4,
+            2,
+            3
+          ],
+          "reference": {
+            "return_time": 17167.0,
+            "optimal": false,
+            "raw": "17167"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_30_1_matrix00_cluster_cp.json",
+          "error": null
+        },
+        "gurobi": {
+          "status": "FEASIBLE",
+          "return_time": 19235,
+          "gap_to_reference": 0.12046368031688705,
+          "wall_seconds": 60.24637937499938,
+          "n_clusters": 8,
+          "cluster_sizes": [
+            5,
+            5,
+            4,
+            2,
+            5,
+            4,
+            2,
+            3
+          ],
+          "reference": {
+            "return_time": 17167.0,
+            "optimal": false,
+            "raw": "17167"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_30_1_matrix00_cluster_gurobi.json",
+          "error": null
+        },
+        "dwave_sa": {
+          "status": "FEASIBLE",
+          "return_time": 19009,
+          "gap_to_reference": 0.10729888740024465,
+          "wall_seconds": 60.47008462499798,
+          "n_clusters": 8,
+          "cluster_sizes": [
+            5,
+            5,
+            4,
+            2,
+            5,
+            4,
+            2,
+            3
+          ],
+          "reference": {
+            "return_time": 17167.0,
+            "optimal": false,
+            "raw": "17167"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_30_1_matrix00_cluster_dwave_sa.json",
+          "error": null
+        },
+        "dwave_leap": {
+          "status": "FEASIBLE",
+          "return_time": 19100,
+          "gap_to_reference": 0.11259975534455642,
+          "wall_seconds": 112.40326916599588,
+          "n_clusters": 8,
+          "cluster_sizes": [
+            5,
+            5,
+            4,
+            2,
+            5,
+            4,
+            2,
+            3
+          ],
+          "reference": {
+            "return_time": 17167.0,
+            "optimal": false,
+            "raw": "17167"
+          },
+          "results_path": "/Users/almarelo/SuperQ/TDTSP/hybrid_cp_qubo/results/inst_30_1_matrix00_cluster_dwave_leap.json",
+          "error": null
+        },
+        "qaoa": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: AWS credentials not found for QAOA backend"
+        },
+        "quanfluence": {
+          "status": "ERROR",
+          "return_time": null,
+          "gap_to_reference": null,
+          "wall_seconds": null,
+          "n_clusters": null,
+          "cluster_sizes": null,
+          "reference": null,
+          "results_path": null,
+          "error": "ValueError: Quanfluence credentials not found in environment variables"
+        }
+      }
+    }
+  ],
+  "wall_clock_start_iso": "2026-07-17T22:24:01.739003+00:00",
+  "matrix": "matrix00"
+}

@@ -1,0 +1,18 @@
+{
+  "experiment": "hybrid_cp_cluster_backends",
+  "path": "cluster_hybrid",
+  "instance": "inst_20_2.txt",
+  "matrix": "matrix00",
+  "n": 20,
+  "cluster_backend": "quanfluence",
+  "status": "ERROR",
+  "error": "ValueError: Quanfluence credentials not found in environment variables",
+  "return_time": null,
+  "reference": {
+    "return_time": 13176.0,
+    "optimal": true,
+    "raw": "13176*"
+  },
+  "wall_clock_end_iso": "2026-07-17T22:47:40.385770+00:00",
+  "note": "Credentials in repo-root .env were empty placeholders; only DWAVE_API_KEY in env was set."
+}

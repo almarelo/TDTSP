@@ -1,0 +1,25 @@
+{
+  "experiment": "hybrid_cp_refined_cluster_solvers",
+  "instance": "inst_10_1.txt",
+  "matrix": "matrix00",
+  "max_cluster_size": 5,
+  "backends_requested": [
+    "gurobi"
+  ],
+  "wall_clock_start_iso": "2026-07-17T21:58:36.436912+00:00",
+  "runs": {
+    "gurobi": {
+      "status": "OPTIMAL",
+      "return_time": 8244,
+      "n_clusters": 3,
+      "cluster_sizes": [
+        5,
+        1,
+        4
+      ],
+      "error": null,
+      "results_path": "/Users/almarelo/SuperQ/TDTSP/results/hybrid_cp_qubo/experiments/inst_10_1_matrix00_mc5_gurobi.json"
+    }
+  },
+  "wall_clock_end_iso": "2026-07-17T21:58:37.232726+00:00"
+}

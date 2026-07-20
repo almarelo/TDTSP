@@ -1,0 +1,53 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "path": "cp_full",
+  "dataset": "data/instances",
+  "instance_file": "tdtsp_n5.json",
+  "n": 5,
+  "slot": "midday",
+  "slot_label": "Midday (12 PM)",
+  "slot_multiplier": 1.5214,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "status": "OPTIMAL",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    3,
+    1,
+    2
+  ],
+  "return_time": 47037,
+  "tour_duration_seconds": 3837.0,
+  "start_time_seconds": 43200.0,
+  "solve_time_seconds": 0.015293000000000001,
+  "wall_seconds": 0.015973125002346933,
+  "objective_bound": 47037.0,
+  "meta": {
+    "source_file": "/Users/almarelo/SuperQ/TDTSP/data/instances/tdtsp_n5.json",
+    "n": 5,
+    "city": "New York",
+    "tz": "America/New_York",
+    "metric": "driving_duration_seconds",
+    "slot_name": "midday",
+    "slot_label": "Midday (12 PM)",
+    "slot_hour": 12,
+    "slot_multiplier": 1.5214,
+    "locations": [
+      "Times Square, New York, NY",
+      "Wall Street, New York, NY",
+      "Central Park, New York, NY",
+      "Brooklyn Bridge, New York, NY",
+      "Penn Station, New York, NY"
+    ],
+    "multipliers": {
+      "morning_peak": 1.5183,
+      "midday": 1.5214,
+      "evening_peak": 1.5912,
+      "night": 1.2971
+    }
+  },
+  "wall_clock_start_iso": "2026-07-20T15:55:36.014425+00:00",
+  "wall_clock_end_iso": "2026-07-20T15:55:36.014429+00:00"
+}

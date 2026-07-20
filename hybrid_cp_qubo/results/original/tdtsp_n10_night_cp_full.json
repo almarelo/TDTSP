@@ -1,0 +1,63 @@
+{
+  "experiment": "hybrid_cp_original_json",
+  "path": "cp_full",
+  "dataset": "data/instances",
+  "instance_file": "tdtsp_n10.json",
+  "n": 10,
+  "slot": "night",
+  "slot_label": "Night (10 PM)",
+  "slot_multiplier": 1.2898,
+  "cluster_backend": null,
+  "max_cluster_size": null,
+  "status": "OPTIMAL",
+  "solver": "CP-SAT (OR-Tools)",
+  "tour_open": [
+    0,
+    4,
+    5,
+    6,
+    1,
+    7,
+    3,
+    9,
+    2,
+    8
+  ],
+  "return_time": 84574,
+  "tour_duration_seconds": 5374.0,
+  "start_time_seconds": 79200.0,
+  "solve_time_seconds": 25.878987000000002,
+  "wall_seconds": 25.881451499997638,
+  "objective_bound": 84574.0,
+  "meta": {
+    "source_file": "/Users/almarelo/SuperQ/TDTSP/data/instances/tdtsp_n10.json",
+    "n": 10,
+    "city": "New York",
+    "tz": "America/New_York",
+    "metric": "driving_duration_seconds",
+    "slot_name": "night",
+    "slot_label": "Night (10 PM)",
+    "slot_hour": 22,
+    "slot_multiplier": 1.2898,
+    "locations": [
+      "Times Square, New York, NY",
+      "Wall Street, New York, NY",
+      "Central Park, New York, NY",
+      "Brooklyn Bridge, New York, NY",
+      "Penn Station, New York, NY",
+      "Empire State Building, New York, NY",
+      "Grand Central Terminal, New York, NY",
+      "World Trade Center, New York, NY",
+      "Lincoln Center, New York, NY",
+      "Yankee Stadium, Bronx, NY"
+    ],
+    "multipliers": {
+      "morning_peak": 1.6168,
+      "midday": 1.588,
+      "evening_peak": 1.6296,
+      "night": 1.2898
+    }
+  },
+  "wall_clock_start_iso": "2026-07-20T15:58:01.471498+00:00",
+  "wall_clock_end_iso": "2026-07-20T15:58:01.471510+00:00"
+}
